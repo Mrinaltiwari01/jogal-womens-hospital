@@ -306,27 +306,13 @@ export default function Hero() {
               overflow: 'hidden',
               boxShadow: 'var(--shadow-lg)',
               aspectRatio: '4/3',
-              background: 'linear-gradient(135deg, #1e3a5f 0%, #2d5a87 100%)',
             }}>
-              {/* Placeholder for Hospital Building */}
-              <div style={{
-                position: 'absolute',
-                inset: 0,
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                justifyContent: 'center',
-                background: 'linear-gradient(135deg, #1e3a5f 0%, #c9a84c 100%)',
-                color: 'white',
-                padding: '40px',
-              }}>
-                <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '28px', fontWeight: 600, marginBottom: '12px' }}>
-                  Jogal Women's Hospital
-                </div>
-                <div style={{ fontSize: '14px', opacity: 0.9 }}>
-                  Bhuj, Kutch
-                </div>
-              </div>
+              <Image
+                src="/assets/Exterior Building Facade.png"
+                alt="Jogal Women's Hospital"
+                fill
+                style={{ objectFit: 'cover' }}
+              />
 
               {/* Gradient Overlay */}
               <div style={{

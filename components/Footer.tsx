@@ -50,7 +50,7 @@ export default function Footer() {
           <div>
             <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '24px', textDecoration: 'none' }}>
               <Image
-                src="/setup/JWH_Logo_22082025-01.jpg (3).jpeg"
+                src="/assets/JWH_Logo_22082025-01.jpg (3).jpeg"
                 alt="Jogal Women's Hospital Logo"
                 width={48}
                 height={48}

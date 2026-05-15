@@ -9,10 +9,16 @@ const phone = '8866117255'
 
 const galleryImages = [
   { src: '/assets/JWH_Logo_final_new.png', alt: 'Jogal Women Hospital Logo', caption: 'Hospital Logo' },
-  { src: '/assets/devensir-solo.jpg', alt: 'Dr. Deven Jogal', caption: 'Dr. Deven Jogal' },
-  { src: '/assets/dr-dipika-solo-768x1024.jpeg', alt: 'Dr. Dipika Thacker', caption: 'Dr. Dipika Thacker' },
-  { src: '/assets/WhatsApp-Image-2024-04-16-at-12.14.22-724x1024.jpeg', alt: 'Hospital Team', caption: 'Our Team' },
-  { src: '/assets/footer-logo.png', alt: 'Footer Logo', caption: 'Hospital Logo' },
+  { src: '/assets/Deven jogal.jpeg', alt: 'Dr. Deven Jogal', caption: 'Dr. Deven Jogal - Director' },
+  { src: '/assets/Hetal jogal.jpeg', alt: 'Dr. Hetal Jogal', caption: 'Dr. Hetal Jogal - Physiotherapist' },
+  { src: '/assets/Deepika thacker .jpeg', alt: 'Dr. Dipika Thacker', caption: 'Dr. Dipika Thacker - IVF Specialist' },
+  { src: '/assets/Vivek dholakiya.jpeg', alt: 'Dr. Vivek Dholakiya', caption: 'Dr. Vivek Dholakiya - Pediatrician' },
+  { src: '/assets/Exterior Building Facade.png', alt: 'Hospital Exterior', caption: 'Hospital Building' },
+  { src: '/assets/RECEPTION AREA(5).png', alt: 'Reception Area', caption: 'Reception - Ground Floor' },
+  { src: '/assets/MATERNITY ROOM.png', alt: 'Maternity Room', caption: 'Maternity Room - First Floor' },
+  { src: '/assets/NICU VIEW 4 copy.png', alt: 'NICU', caption: 'Level 3 NICU - Second Floor' },
+  { src: '/assets/Jogal team.jpeg', alt: 'Hospital Team', caption: 'Our Team' },
+  { src: '/assets/JWH_Logo_22082025-01.jpg (3).jpeg', alt: 'Hospital Logo New', caption: 'JWH Official Logo' },
   { src: '/assets/GEE-logo-01-1-1.png', alt: 'GEE Logo', caption: 'Partner Logo' },
 ]
 

@@ -5,10 +5,5 @@ node_modules/
 out/
 public/assets/backup/
 3D/
-setup/
+Setup/
 *.pdf
-*.jpeg
-*.jpg
-*.png
-
-.vercel

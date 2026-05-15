@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 import { FiPhone, FiGrid, FiHome, FiActivity, FiCheck } from 'react-icons/fi'
 
 const phone = '8866117255'
@@ -10,37 +11,37 @@ const facilities = [
     title: 'Reception & Registration',
     description: 'Ground floor welcoming area with smooth patient registration process',
     location: 'Ground Floor',
-    icon: '🏥'
+    image: '/assets/RECEPTION AREA(5).png'
   },
   {
     title: 'Consultation Rooms',
     description: 'Private OPD rooms for comfortable doctor consultations',
     location: 'Ground Floor',
-    icon: '👩‍⚕️'
+    image: '/assets/OPD-1.png'
   },
   {
     title: 'Maternity Rooms',
     description: 'Spacious, well-equipped rooms for expectant mothers',
     location: 'First Floor',
-    icon: '👶'
+    image: '/assets/MATERNITY ROOM.png'
   },
   {
     title: 'Suite Rooms',
     description: 'Premium patient rooms with modern amenities for recovery',
     location: 'First Floor',
-    icon: '🛏️'
+    image: '/assets/suite room-2(7).png'
   },
   {
     title: 'Level 3 NICU',
     description: '12-bed state-of-the-art neonatal intensive care unit',
     location: 'Second Floor',
-    icon: '🏥'
+    image: '/assets/NICU VIEW 4 copy.png'
   },
   {
-    title: 'Hospital Elevator',
-    description: 'Easy access between floors for patients and visitors',
+    title: 'Hospital Exterior',
+    description: 'Modern hospital building with patient-friendly design',
     location: 'All Floors',
-    icon: '🛗'
+    image: '/assets/Exterior Building Facade.png'
   }
 ]
 
@@ -137,10 +138,19 @@ export default function Facilities() {
               className="facility-card"
             >
               <div style={{
-                fontSize: '48px',
+                position: 'relative',
+                width: '100%',
+                height: '160px',
+                borderRadius: '12px',
+                overflow: 'hidden',
                 marginBottom: '16px',
               }}>
-                {facility.icon}
+                <Image
+                  src={facility.image}
+                  alt={facility.title}
+                  fill
+                  style={{ objectFit: 'cover' }}
+                />
               </div>
               <div style={{
                 background: 'var(--accent)',

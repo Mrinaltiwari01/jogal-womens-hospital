@@ -23,7 +23,7 @@ const videos = [
     description: 'Expert advice on maintaining women\'s health at every stage of life',
     category: 'hetal',
     doctor: 'Dr. Hetal Jogal',
-    thumbnail: '/assets/devensir-solo.jpg',
+    thumbnail: '/assets/Hetal jogal.jpeg',
     url: 'https://www.instagram.com/reel/DXhTqp1jMx3/',
   },
   {
@@ -32,7 +32,7 @@ const videos = [
     description: 'Essential tips for a healthy pregnancy journey',
     category: 'hetal',
     doctor: 'Dr. Hetal Jogal',
-    thumbnail: '/assets/devensir-solo.jpg',
+    thumbnail: '/assets/Hetal jogal.jpeg',
     url: 'https://www.instagram.com/reel/DVikcALEe8r/',
   },
   {
@@ -41,7 +41,7 @@ const videos = [
     description: 'Expert guidance for a smooth postpartum recovery',
     category: 'hetal',
     doctor: 'Dr. Hetal Jogal',
-    thumbnail: '/assets/devensir-solo.jpg',
+    thumbnail: '/assets/Hetal jogal.jpeg',
     url: 'https://www.instagram.com/reel/DUbCYqRjE5G/',
   },
   {
@@ -50,7 +50,7 @@ const videos = [
     description: 'Understanding minimally invasive gynecological procedures',
     category: 'deven',
     doctor: 'Dr. Deven Jogal',
-    thumbnail: '/assets/devensir-solo.jpg',
+    thumbnail: '/assets/Deven jogal.jpeg',
     url: 'https://www.instagram.com/reel/DWJy6JLiMk2/',
   },
   {
@@ -59,7 +59,7 @@ const videos = [
     description: 'What every woman should know about endometriosis',
     category: 'deven',
     doctor: 'Dr. Deven Jogal',
-    thumbnail: '/assets/devensir-solo.jpg',
+    thumbnail: '/assets/Deven jogal.jpeg',
     url: 'https://www.instagram.com/reel/DV85HdVCYI7/',
   },
   {
@@ -68,7 +68,7 @@ const videos = [
     description: 'Expert management of complex pregnancies',
     category: 'deven',
     doctor: 'Dr. Deven Jogal',
-    thumbnail: '/assets/devensir-solo.jpg',
+    thumbnail: '/assets/Deven jogal.jpeg',
     url: 'https://www.instagram.com/reel/DVvsYa9CWbK/',
   },
   {
@@ -77,7 +77,7 @@ const videos = [
     description: 'A beautiful journey of motherhood at Jogal Hospital',
     category: 'babies',
     doctor: 'Our Team',
-    thumbnail: '/assets/WhatsApp-Image-2024-04-16-at-12.14.22-724x1024.jpeg',
+    thumbnail: '/assets/MATERNITY ROOM.png',
     url: 'https://www.instagram.com/reel/DV_BFE6idbn/',
   },
   {
@@ -86,7 +86,7 @@ const videos = [
     description: 'Celebrating new life with joyful families',
     category: 'babies',
     doctor: 'Our Team',
-    thumbnail: '/assets/WhatsApp-Image-2024-04-16-at-12.14.22-724x1024.jpeg',
+    thumbnail: '/assets/NICU VIEW 4 copy.png',
     url: 'https://www.instagram.com/reel/DU205PCDAC8/',
   },
   {
@@ -95,7 +95,7 @@ const videos = [
     description: 'Premature baby graduates from our Level 3 NICU',
     category: 'babies',
     doctor: 'Our Team',
-    thumbnail: '/assets/WhatsApp-Image-2024-04-16-at-12.14.22-724x1024.jpeg',
+    thumbnail: '/assets/NICU VIEW 4 copy.png',
     url: 'https://www.instagram.com/reel/DVBLBO2DEI_/',
   },
   {
@@ -104,7 +104,7 @@ const videos = [
     description: 'Essential tips for new parents from our pediatrician',
     category: 'vivek',
     doctor: 'Dr. Vivek Dholakiya',
-    thumbnail: '/assets/devensir-solo.jpg',
+    thumbnail: '/assets/Vivek dholakiya.jpeg',
     url: 'https://www.instagram.com/reel/DU_Ij2KiWb6/',
   },
   {
@@ -113,7 +113,7 @@ const videos = [
     description: 'Keeping your child healthy with proper immunisation',
     category: 'vivek',
     doctor: 'Dr. Vivek Dholakiya',
-    thumbnail: '/assets/devensir-solo.jpg',
+    thumbnail: '/assets/Vivek dholakiya.jpeg',
     url: 'https://www.instagram.com/reel/DVgX7a7CeES/',
   },
   {
@@ -122,7 +122,7 @@ const videos = [
     description: 'Inside our state-of-the-art Level 3 NICU facility',
     category: 'vivek',
     doctor: 'Dr. Vivek Dholakiya',
-    thumbnail: '/assets/devensir-solo.jpg',
+    thumbnail: '/assets/Vivek dholakiya.jpeg',
     url: 'https://www.instagram.com/reel/DVoLC3tEo_V/',
   },
   {
@@ -131,7 +131,7 @@ const videos = [
     description: 'Understanding the IVF process step by step',
     category: 'dipika',
     doctor: 'Dr. Dipika Thacker',
-    thumbnail: '/assets/dr-dipika-solo-768x1024.jpeg',
+    thumbnail: '/assets/Deepika thacker .jpeg',
     url: 'https://www.instagram.com/reel/DVi5MjnDKJg/',
   },
   {
@@ -140,7 +140,7 @@ const videos = [
     description: 'Exploring different fertility treatment possibilities',
     category: 'dipika',
     doctor: 'Dr. Dipika Thacker',
-    thumbnail: '/assets/dr-dipika-solo-768x1024.jpeg',
+    thumbnail: '/assets/Deepika thacker .jpeg',
     url: 'https://www.instagram.com/reel/DU58T8QDEmU/',
   },
   {
@@ -149,7 +149,7 @@ const videos = [
     description: 'What to expect during IUI treatment',
     category: 'dipika',
     doctor: 'Dr. Dipika Thacker',
-    thumbnail: '/assets/dr-dipika-solo-768x1024.jpeg',
+    thumbnail: '/assets/Deepika thacker .jpeg',
     url: 'https://www.instagram.com/reel/DTxutVWjN1e/',
   },
 ]
