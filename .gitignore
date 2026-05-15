@@ -1,0 +1,12 @@
+node_modules/
+.next/
+.vercel/
+.env*.local
+out/
+public/assets/backup/
+3D/
+setup/
+*.pdf
+*.jpeg
+*.jpg
+*.png
