@@ -2,11 +2,11 @@
 
 import { useState } from 'react'
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 import { FiPlay, FiInstagram, FiArrowRight } from 'react-icons/fi'
 
 const phone = '8866117255'
 
-// Real Instagram Reels Data
 const videoCategories = [
   { id: 'all', label: 'All' },
   { id: 'deven', label: 'Dr. Deven Jogal' },
@@ -17,14 +17,13 @@ const videoCategories = [
 ]
 
 const videos = [
-  // Dr. Hetal Jogal Videos
   {
     id: 1,
-    title: 'Women\'s Health Tips',
+    title: "Women's Health Tips",
     description: 'Expert advice on maintaining women\'s health at every stage of life',
     category: 'hetal',
     doctor: 'Dr. Hetal Jogal',
-    thumbnail: '/3D/Jogal Hospital photos/067A7580.JPG',
+    thumbnail: '/assets/devensir-solo.jpg',
     url: 'https://www.instagram.com/reel/DXhTqp1jMx3/',
   },
   {
@@ -33,7 +32,7 @@ const videos = [
     description: 'Essential tips for a healthy pregnancy journey',
     category: 'hetal',
     doctor: 'Dr. Hetal Jogal',
-    thumbnail: '/3D/Jogal Hospital photos/067A7712.JPG',
+    thumbnail: '/assets/devensir-solo.jpg',
     url: 'https://www.instagram.com/reel/DVikcALEe8r/',
   },
   {
@@ -42,10 +41,9 @@ const videos = [
     description: 'Expert guidance for a smooth postpartum recovery',
     category: 'hetal',
     doctor: 'Dr. Hetal Jogal',
-    thumbnail: '/3D/Jogal Hospital photos/067A7624.JPG',
+    thumbnail: '/assets/devensir-solo.jpg',
     url: 'https://www.instagram.com/reel/DUbCYqRjE5G/',
   },
-  // Dr. Deven Jogal Videos
   {
     id: 4,
     title: 'Advanced Laparoscopic Surgery',
@@ -61,7 +59,7 @@ const videos = [
     description: 'What every woman should know about endometriosis',
     category: 'deven',
     doctor: 'Dr. Deven Jogal',
-    thumbnail: '/3D/Jogal Hospital photos/067A7798.JPG',
+    thumbnail: '/assets/devensir-solo.jpg',
     url: 'https://www.instagram.com/reel/DV85HdVCYI7/',
   },
   {
@@ -70,17 +68,16 @@ const videos = [
     description: 'Expert management of complex pregnancies',
     category: 'deven',
     doctor: 'Dr. Deven Jogal',
-    thumbnail: '/3D/Jogal Hospital photos/067A7975.JPG',
+    thumbnail: '/assets/devensir-solo.jpg',
     url: 'https://www.instagram.com/reel/DVvsYa9CWbK/',
   },
-  // Baby Delivery Stories
   {
     id: 7,
     title: 'Happy Delivery Story',
     description: 'A beautiful journey of motherhood at Jogal Hospital',
     category: 'babies',
     doctor: 'Our Team',
-    thumbnail: '/3D/Jogal Hospital photos/067A8010.JPG',
+    thumbnail: '/assets/WhatsApp-Image-2024-04-16-at-12.14.22-724x1024.jpeg',
     url: 'https://www.instagram.com/reel/DV_BFE6idbn/',
   },
   {
@@ -89,7 +86,7 @@ const videos = [
     description: 'Celebrating new life with joyful families',
     category: 'babies',
     doctor: 'Our Team',
-    thumbnail: '/3D/Jogal Hospital photos/067A8166.JPG',
+    thumbnail: '/assets/WhatsApp-Image-2024-04-16-at-12.14.22-724x1024.jpeg',
     url: 'https://www.instagram.com/reel/DU205PCDAC8/',
   },
   {
@@ -98,17 +95,16 @@ const videos = [
     description: 'Premature baby graduates from our Level 3 NICU',
     category: 'babies',
     doctor: 'Our Team',
-    thumbnail: '/3D/Jogal Hospital photos/067A8227.JPG',
+    thumbnail: '/assets/WhatsApp-Image-2024-04-16-at-12.14.22-724x1024.jpeg',
     url: 'https://www.instagram.com/reel/DVBLBO2DEI_/',
   },
-  // Dr. Vivek Dholakiya Videos
   {
     id: 10,
     title: 'Newborn Care Basics',
     description: 'Essential tips for new parents from our pediatrician',
     category: 'vivek',
     doctor: 'Dr. Vivek Dholakiya',
-    thumbnail: '/3D/Jogal Hospital photos/067A7538.JPG',
+    thumbnail: '/assets/devensir-solo.jpg',
     url: 'https://www.instagram.com/reel/DU_Ij2KiWb6/',
   },
   {
@@ -117,7 +113,7 @@ const videos = [
     description: 'Keeping your child healthy with proper immunisation',
     category: 'vivek',
     doctor: 'Dr. Vivek Dholakiya',
-    thumbnail: '/3D/Jogal Hospital photos/067A8230.JPG',
+    thumbnail: '/assets/devensir-solo.jpg',
     url: 'https://www.instagram.com/reel/DVgX7a7CeES/',
   },
   {
@@ -126,10 +122,9 @@ const videos = [
     description: 'Inside our state-of-the-art Level 3 NICU facility',
     category: 'vivek',
     doctor: 'Dr. Vivek Dholakiya',
-    thumbnail: '/3D/Interior/2nd Floor/NICU/NICU VIEW 4 copy.png',
+    thumbnail: '/assets/devensir-solo.jpg',
     url: 'https://www.instagram.com/reel/DVoLC3tEo_V/',
   },
-  // Dr. Dipika Thacker Videos
   {
     id: 13,
     title: 'IVF Journey Explained',
@@ -145,7 +140,7 @@ const videos = [
     description: 'Exploring different fertility treatment possibilities',
     category: 'dipika',
     doctor: 'Dr. Dipika Thacker',
-    thumbnail: '/3D/Jogal Hospital photos/067A8319.JPG',
+    thumbnail: '/assets/dr-dipika-solo-768x1024.jpeg',
     url: 'https://www.instagram.com/reel/DU58T8QDEmU/',
   },
   {
@@ -154,7 +149,7 @@ const videos = [
     description: 'What to expect during IUI treatment',
     category: 'dipika',
     doctor: 'Dr. Dipika Thacker',
-    thumbnail: '/3D/Jogal Hospital photos/067A8241.JPG',
+    thumbnail: '/assets/dr-dipika-solo-768x1024.jpeg',
     url: 'https://www.instagram.com/reel/DTxutVWjN1e/',
   },
 ]
@@ -315,18 +310,13 @@ export default function VideoSection() {
                 overflow: 'hidden',
                 background: 'var(--soft-blue)',
               }}>
-                {/* Use thumbnail if exists */}
-                {video.thumbnail && (
-                  <img
-                    src={video.thumbnail}
-                    alt={video.title}
-                    style={{
-                      width: '100%',
-                      height: '100%',
-                      objectFit: 'cover',
-                    }}
-                  />
-                )}
+                <Image
+                  src={video.thumbnail}
+                  alt={video.title}
+                  fill
+                  style={{ objectFit: 'cover' }}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                />
                 {/* Play Button Overlay */}
                 <div style={{
                   position: 'absolute',

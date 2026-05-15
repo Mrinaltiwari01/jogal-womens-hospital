@@ -1,8 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import Image from 'next/image'
-import { FiPhone, FiGrid, FiHome, FiActivity } from 'react-icons/fi'
+import { FiPhone, FiGrid, FiHome, FiActivity, FiCheck } from 'react-icons/fi'
 
 const phone = '8866117255'
 
@@ -10,38 +9,38 @@ const facilities = [
   {
     title: 'Reception & Registration',
     description: 'Ground floor welcoming area with smooth patient registration process',
-    image: '/3D/Interior/Ground Floor/RECEPTION AREA(1).png',
-    location: 'Ground Floor'
+    location: 'Ground Floor',
+    icon: '🏥'
   },
   {
     title: 'Consultation Rooms',
     description: 'Private OPD rooms for comfortable doctor consultations',
-    image: '/3D/Interior/Ground Floor/OPD-1.png',
-    location: 'Ground Floor'
+    location: 'Ground Floor',
+    icon: '👩‍⚕️'
   },
   {
     title: 'Maternity Rooms',
     description: 'Spacious, well-equipped rooms for expectant mothers',
-    image: '/3D/Interior/1st Floor/MATERNITY ROOM1.png',
-    location: 'First Floor'
+    location: 'First Floor',
+    icon: '👶'
   },
   {
     title: 'Suite Rooms',
     description: 'Premium patient rooms with modern amenities for recovery',
-    image: '/3D/Interior/1st Floor/suite room-2(1).png',
-    location: 'First Floor'
+    location: 'First Floor',
+    icon: '🛏️'
   },
   {
     title: 'Level 3 NICU',
     description: '12-bed state-of-the-art neonatal intensive care unit',
-    image: '/3D/Interior/2nd Floor/NICU/NICU VIEW 4 copy.png',
-    location: 'Second Floor'
+    location: 'Second Floor',
+    icon: '🏥'
   },
   {
     title: 'Hospital Elevator',
     description: 'Easy access between floors for patients and visitors',
-    image: '/3D/Interior/LIFT/Lift 01.png',
-    location: 'All Floors'
+    location: 'All Floors',
+    icon: '🛗'
   }
 ]
 
@@ -49,17 +48,14 @@ const floorPlan = [
   {
     floor: 'Ground Floor',
     areas: ['Reception & Registration', 'OPD Consultation Rooms', 'Temple Area'],
-    image: '/3D/Interior/Ground Floor/RECEPTION AREA(5).png'
   },
   {
     floor: 'First Floor',
     areas: ['Maternity Rooms', 'Suite Rooms', 'Patient Suites'],
-    image: '/3D/Interior/1st Floor/MATERNITY ROOM2.png'
   },
   {
     floor: 'Second Floor',
     areas: ['Level 3 NICU (12 beds)', 'NICU Viewing Area'],
-    image: '/3D/Interior/2nd Floor/Camera 01_001.png'
   }
 ]
 
@@ -97,7 +93,7 @@ export default function Facilities() {
             lineHeight: 1.15,
             marginBottom: '16px',
           }}>
-            Modern Facilities Built for<br /><span style={{ color: 'var(--accent)', fontStyle: 'italic' }}>Women&apos;s Care</span>
+            Modern Facilities Built for<br /><span style={{ color: 'var(--accent)', fontStyle: 'italic' }}>Women's Care</span>
           </h2>
           <p style={{
             fontSize: '15px',
@@ -125,8 +121,9 @@ export default function Facilities() {
               style={{
                 background: 'var(--surface)',
                 borderRadius: '16px',
-                overflow: 'hidden',
+                padding: '32px',
                 border: '1px solid var(--border)',
+                textAlign: 'center',
                 transition: 'all 0.3s ease',
               }}
               onMouseEnter={(e) => {
@@ -139,43 +136,34 @@ export default function Facilities() {
               }}
               className="facility-card"
             >
-              {/* Image */}
-              <div style={{ position: 'relative', aspectRatio: '16/10', overflow: 'hidden', background: 'var(--soft-blue)' }}>
-                <Image
-                  src={facility.image}
-                  alt={facility.title}
-                  fill
-                  style={{ objectFit: 'cover', transition: 'transform 0.5s' }}
-                  className="facility-image"
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                />
-                <div style={{
-                  position: 'absolute',
-                  top: '12px',
-                  right: '12px',
-                  background: 'var(--accent)',
-                  color: 'white',
-                  padding: '6px 12px',
-                  borderRadius: '20px',
-                  fontSize: '10px',
-                  textTransform: 'uppercase',
-                  letterSpacing: '1px',
-                  fontWeight: 600,
-                }}>
-                  {facility.location}
-                </div>
+              <div style={{
+                fontSize: '48px',
+                marginBottom: '16px',
+              }}>
+                {facility.icon}
               </div>
-              {/* Content */}
-              <div style={{ padding: '20px 24px' }}>
-                <h3 style={{
-                  fontFamily: "'Cormorant Garamond', serif",
-                  fontSize: '20px',
-                  color: 'var(--text)',
-                  fontWeight: 500,
-                  marginBottom: '8px',
-                }}>{facility.title}</h3>
-                <p style={{ fontSize: '13px', color: 'var(--text-secondary)', lineHeight: 1.6 }}>{facility.description}</p>
+              <div style={{
+                background: 'var(--accent)',
+                color: 'white',
+                padding: '6px 12px',
+                borderRadius: '20px',
+                fontSize: '10px',
+                textTransform: 'uppercase',
+                letterSpacing: '1px',
+                fontWeight: 600,
+                display: 'inline-block',
+                marginBottom: '12px',
+              }}>
+                {facility.location}
               </div>
+              <h3 style={{
+                fontFamily: "'Cormorant Garamond', serif",
+                fontSize: '20px',
+                color: 'var(--text)',
+                fontWeight: 500,
+                marginBottom: '8px',
+              }}>{facility.title}</h3>
+              <p style={{ fontSize: '13px', color: 'var(--text-secondary)', lineHeight: 1.6 }}>{facility.description}</p>
             </motion.div>
           ))}
         </div>
@@ -209,9 +197,10 @@ export default function Facilities() {
                 transition={{ delay: index * 0.1 }}
                 style={{
                   display: 'flex',
+                  flexDirection: 'column',
                   background: 'var(--surface)',
                   borderRadius: '16px',
-                  overflow: 'hidden',
+                  padding: '24px',
                   border: '1px solid var(--border)',
                   transition: 'all 0.3s ease',
                 }}
@@ -225,30 +214,17 @@ export default function Facilities() {
                 }}
                 className="floor-card"
               >
-                {/* Floor Image */}
-                <div style={{ position: 'relative', width: '140px', flexShrink: 0, background: 'var(--soft-blue)' }}>
-                  <Image
-                    src={floor.image}
-                    alt={`${floor.floor} - Hospital Floor`}
-                    fill
-                    style={{ objectFit: 'cover' }}
-                    sizes="140px"
-                  />
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '16px' }}>
+                  <FiHome size={18} color="var(--accent)" />
+                  <span style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '20px', color: 'var(--text)', fontWeight: 500 }}>{floor.floor}</span>
                 </div>
-                {/* Floor Info */}
-                <div style={{ padding: '20px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '12px' }}>
-                    <FiHome size={16} color="var(--accent)" />
-                    <span style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '18px', color: 'var(--text)', fontWeight: 500 }}>{floor.floor}</span>
-                  </div>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
-                    {floor.areas.map((area) => (
-                      <div key={area} style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '12px', color: 'var(--text-secondary)' }}>
-                        <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: 'var(--accent)', flexShrink: 0 }} />
-                        {area}
-                      </div>
-                    ))}
-                  </div>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                  {floor.areas.map((area) => (
+                    <div key={area} style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '13px', color: 'var(--text-secondary)' }}>
+                      <FiCheck size={14} color="var(--accent)" />
+                      {area}
+                    </div>
+                  ))}
                 </div>
               </motion.div>
             ))}
@@ -340,12 +316,6 @@ export default function Facilities() {
           </a>
         </motion.div>
       </div>
-
-      <style>{`
-        .facility-card:hover .facility-image {
-          transform: scale(1.05);
-        }
-      `}</style>
     </section>
   )
 }

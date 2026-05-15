@@ -3,96 +3,22 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Image from 'next/image'
-import { FiX, FiChevronLeft, FiChevronRight, FiZoomIn, FiInstagram } from 'react-icons/fi'
+import { FiX, FiChevronLeft, FiChevronRight, FiZoomIn } from 'react-icons/fi'
 
 const phone = '8866117255'
 
-const galleryCategories = [
-  { id: 'all', label: 'All Photos' },
-  { id: 'exterior', label: 'Exterior' },
-  { id: 'reception', label: 'Reception' },
-  { id: 'rooms', label: 'Patient Rooms' },
-  { id: 'nicu', label: 'NICU' },
-  { id: 'opd', label: 'OPD' }
+const galleryImages = [
+  { src: '/assets/JWH_Logo_final_new.png', alt: 'Jogal Women Hospital Logo', caption: 'Hospital Logo' },
+  { src: '/assets/devensir-solo.jpg', alt: 'Dr. Deven Jogal', caption: 'Dr. Deven Jogal' },
+  { src: '/assets/dr-dipika-solo-768x1024.jpeg', alt: 'Dr. Dipika Thacker', caption: 'Dr. Dipika Thacker' },
+  { src: '/assets/WhatsApp-Image-2024-04-16-at-12.14.22-724x1024.jpeg', alt: 'Hospital Team', caption: 'Our Team' },
+  { src: '/assets/footer-logo.png', alt: 'Footer Logo', caption: 'Hospital Logo' },
+  { src: '/assets/GEE-logo-01-1-1.png', alt: 'GEE Logo', caption: 'Partner Logo' },
 ]
 
-const galleryImages: Record<string, Array<{ src: string; alt: string; caption: string; category: string }>> = {
-  all: [
-    { src: '/3D/Exterior/Exterior Building Facade.png', alt: 'Jogal Women Hospital Building - Bhuj', caption: 'Hospital Exterior', category: 'Exterior' },
-    { src: '/3D/Exterior/Jogal Exterior Passage Area.png', alt: 'Jogal Women Hospital Passage Area', caption: 'Hospital Passage', category: 'Exterior' },
-    { src: '/3D/Interior/Ground Floor/RECEPTION AREA(1).png', alt: 'Jogal Women Hospital Reception Area', caption: 'Reception Area', category: 'Reception' },
-    { src: '/3D/Interior/Ground Floor/RECEPTION AREA(2).png', alt: 'Jogal Women Hospital Reception', caption: 'Reception Desk', category: 'Reception' },
-    { src: '/3D/Interior/Ground Floor/RECEPTION AREA(5).png', alt: 'Hospital Reception', caption: 'Reception', category: 'Reception' },
-    { src: '/3D/Interior/Ground Floor/OPD-1.png', alt: 'OPD Consultation Room', caption: 'OPD Room 1', category: 'OPD' },
-    { src: '/3D/Interior/Ground Floor/OPD-1(1).png', alt: 'OPD Consultation', caption: 'OPD Consultation', category: 'OPD' },
-    { src: '/3D/Interior/Ground Floor/OPD-2(1).png', alt: 'OPD Room 2', caption: 'OPD Room 2', category: 'OPD' },
-    { src: '/3D/Interior/Ground Floor/OPD-2(2).png', alt: 'OPD Interior', caption: 'OPD Interior', category: 'OPD' },
-    { src: '/3D/Interior/Ground Floor/OPD-3(1).png', alt: 'OPD Room 3', caption: 'OPD Room 3', category: 'OPD' },
-    { src: '/3D/Interior/Ground Floor/OPD-3(2).png', alt: 'OPD Area', caption: 'OPD Area', category: 'OPD' },
-    { src: '/3D/Interior/1st Floor/suite room-2(1).png', alt: 'Suite Room - First Floor', caption: 'Suite Room', category: 'Rooms' },
-    { src: '/3D/Interior/1st Floor/suite room-2(2).png', alt: 'Hospital Suite Room', caption: 'Suite Room', category: 'Rooms' },
-    { src: '/3D/Interior/1st Floor/suite room-2(4).png', alt: 'Patient Suite', caption: 'Patient Suite', category: 'Rooms' },
-    { src: '/3D/Interior/1st Floor/suite room-2(5).png', alt: 'Hospital Suite', caption: 'Hospital Suite', category: 'Rooms' },
-    { src: '/3D/Interior/1st Floor/suite room-2(7).png', alt: 'First Floor Suite', caption: 'First Floor Suite', category: 'Rooms' },
-    { src: '/3D/Interior/1st Floor/MATERNITY ROOM1.png', alt: 'Maternity Room', caption: 'Maternity Room', category: 'Rooms' },
-    { src: '/3D/Interior/1st Floor/MATERNITY ROOM1 20-11-2025 18_20_36_272.png', alt: 'Maternity Care Room', caption: 'Maternity Care Room', category: 'Rooms' },
-    { src: '/3D/Interior/1st Floor/MATERNITY ROOM2.png', alt: 'Maternity Room View 2', caption: 'Maternity Room', category: 'Rooms' },
-    { src: '/3D/Interior/1st Floor/MATERNITY ROOM3.png', alt: 'Maternity Suite', caption: 'Maternity Suite', category: 'Rooms' },
-    { src: '/3D/Interior/1st Floor/MATERNITY ROOM4.png', alt: 'Maternity Care Suite', caption: 'Maternity Care Suite', category: 'Rooms' },
-    { src: '/3D/Interior/2nd Floor/NICU/NICU VIEW 4 copy.png', alt: 'Level 3 NICU - 12 Bed Unit', caption: 'Level 3 NICU', category: 'NICU' },
-    { src: '/3D/Interior/2nd Floor/NICU/NICU VIEW 5 copy.png', alt: 'Neonatal Intensive Care Unit', caption: 'NICU View', category: 'NICU' },
-    { src: '/3D/Interior/2nd Floor/Camera 01_001.png', alt: 'Hospital Floor - Second Floor', caption: 'Second Floor', category: 'NICU' },
-    { src: '/3D/Interior/2nd Floor/Camera 02_001.png', alt: 'Hospital Floor View', caption: 'Floor View', category: 'NICU' },
-    { src: '/3D/Interior/2nd Floor/Camera 03_001.png', alt: 'Hospital Corridor', caption: 'Hospital Corridor', category: 'NICU' },
-    { src: '/3D/Interior/LIFT/Lift 01.png', alt: 'Hospital Elevator - Lift Facility', caption: 'Hospital Lift', category: 'Facilities' },
-    { src: '/3D/Interior/Ground Floor/temple.png', alt: 'Hospital Temple Area', caption: 'Temple Area', category: 'Facilities' },
-  ],
-  exterior: [
-    { src: '/3D/Exterior/Exterior Building Facade.png', alt: 'Jogal Women Hospital Building - Bhuj', caption: 'Hospital Building', category: 'Exterior' },
-    { src: '/3D/Exterior/Jogal Exterior Passage Area.png', alt: 'Hospital Passage Area', caption: 'Passage Area', category: 'Exterior' },
-  ],
-  reception: [
-    { src: '/3D/Interior/Ground Floor/RECEPTION AREA(1).png', alt: 'Hospital Reception Area', caption: 'Reception Area', category: 'Reception' },
-    { src: '/3D/Interior/Ground Floor/RECEPTION AREA(2).png', alt: 'Hospital Reception', caption: 'Reception Desk', category: 'Reception' },
-    { src: '/3D/Interior/Ground Floor/RECEPTION AREA(5).png', alt: 'Reception', caption: 'Reception', category: 'Reception' },
-    { src: '/3D/Interior/Ground Floor/temple.png', alt: 'Hospital Temple', caption: 'Temple Area', category: 'Reception' },
-  ],
-  rooms: [
-    { src: '/3D/Interior/1st Floor/suite room-2(1).png', alt: 'Suite Room', caption: 'Suite Room', category: 'Rooms' },
-    { src: '/3D/Interior/1st Floor/suite room-2(2).png', alt: 'Hospital Suite', caption: 'Hospital Suite', category: 'Rooms' },
-    { src: '/3D/Interior/1st Floor/suite room-2(4).png', alt: 'Patient Suite', caption: 'Patient Suite', category: 'Rooms' },
-    { src: '/3D/Interior/1st Floor/suite room-2(5).png', alt: 'Suite', caption: 'Suite', category: 'Rooms' },
-    { src: '/3D/Interior/1st Floor/suite room-2(7).png', alt: 'First Floor Suite', caption: 'First Floor Suite', category: 'Rooms' },
-    { src: '/3D/Interior/1st Floor/MATERNITY ROOM1.png', alt: 'Maternity Room', caption: 'Maternity Room', category: 'Rooms' },
-    { src: '/3D/Interior/1st Floor/MATERNITY ROOM1 20-11-2025 18_20_36_272.png', alt: 'Maternity Care', caption: 'Maternity Care', category: 'Rooms' },
-    { src: '/3D/Interior/1st Floor/MATERNITY ROOM2.png', alt: 'Maternity Room', caption: 'Maternity Room', category: 'Rooms' },
-    { src: '/3D/Interior/1st Floor/MATERNITY ROOM3.png', alt: 'Maternity Suite', caption: 'Maternity Suite', category: 'Rooms' },
-    { src: '/3D/Interior/1st Floor/MATERNITY ROOM4.png', alt: 'Maternity Care Suite', caption: 'Maternity Care Suite', category: 'Rooms' },
-  ],
-  nicu: [
-    { src: '/3D/Interior/2nd Floor/NICU/NICU VIEW 4 copy.png', alt: 'Level 3 NICU - 12 Bed', caption: 'Level 3 NICU', category: 'NICU' },
-    { src: '/3D/Interior/2nd Floor/NICU/NICU VIEW 5 copy.png', alt: 'NICU', caption: 'NICU View', category: 'NICU' },
-    { src: '/3D/Interior/2nd Floor/Camera 01_001.png', alt: 'Hospital Floor', caption: 'Second Floor', category: 'NICU' },
-    { src: '/3D/Interior/2nd Floor/Camera 02_001.png', alt: 'Floor View', caption: 'Floor View', category: 'NICU' },
-    { src: '/3D/Interior/2nd Floor/Camera 03_001.png', alt: 'Corridor', caption: 'Hospital Corridor', category: 'NICU' },
-  ],
-  opd: [
-    { src: '/3D/Interior/Ground Floor/OPD-1.png', alt: 'OPD Room 1', caption: 'OPD Room 1', category: 'OPD' },
-    { src: '/3D/Interior/Ground Floor/OPD-1(1).png', alt: 'OPD Consultation', caption: 'OPD Consultation', category: 'OPD' },
-    { src: '/3D/Interior/Ground Floor/OPD-1(2).png', alt: 'OPD Room', caption: 'OPD Room', category: 'OPD' },
-    { src: '/3D/Interior/Ground Floor/OPD-2(1).png', alt: 'OPD Room 2', caption: 'OPD Room 2', category: 'OPD' },
-    { src: '/3D/Interior/Ground Floor/OPD-2(2).png', alt: 'OPD Interior', caption: 'OPD Interior', category: 'OPD' },
-    { src: '/3D/Interior/Ground Floor/OPD-3(1).png', alt: 'OPD Room 3', caption: 'OPD Room 3', category: 'OPD' },
-    { src: '/3D/Interior/Ground Floor/OPD-3(2).png', alt: 'OPD Area', caption: 'OPD Area', category: 'OPD' },
-  ]
-}
-
 export default function Gallery() {
-  const [activeCategory, setActiveCategory] = useState('all')
   const [lightboxOpen, setLightboxOpen] = useState(false)
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
-
-  const currentImages = galleryImages[activeCategory] || []
 
   const openLightbox = (index: number) => {
     setCurrentImageIndex(index)
@@ -104,11 +30,11 @@ export default function Gallery() {
   }
 
   const nextImage = () => {
-    setCurrentImageIndex((prev) => (prev + 1) % currentImages.length)
+    setCurrentImageIndex((prev) => (prev + 1) % galleryImages.length)
   }
 
   const prevImage = () => {
-    setCurrentImageIndex((prev) => (prev - 1 + currentImages.length) % currentImages.length)
+    setCurrentImageIndex((prev) => (prev - 1 + galleryImages.length) % galleryImages.length)
   }
 
   return (
@@ -144,79 +70,30 @@ export default function Gallery() {
             lineHeight: 1.15,
             marginBottom: '16px',
           }}>
-            A Look Inside <span style={{ color: 'var(--accent)', fontStyle: 'italic' }}>Jogal</span> Women&apos;s Hospital
+            Meet Our <span style={{ color: 'var(--accent)', fontStyle: 'italic' }}>Team</span>
           </h2>
           <p style={{
             fontSize: '15px',
             color: 'var(--text-secondary)',
             lineHeight: 1.8,
           }}>
-            Explore our modern facilities designed for comfort, care, and advanced medical treatment.
+            Our experienced team of doctors dedicated to providing the best care for women and children.
           </p>
-        </motion.div>
-
-        {/* Category Tabs */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          style={{
-            display: 'flex',
-            flexWrap: 'wrap',
-            gap: '8px',
-            justifyContent: 'center',
-            marginBottom: '48px',
-          }}
-        >
-          {galleryCategories.map((cat) => (
-            <button
-              key={cat.id}
-              onClick={() => setActiveCategory(cat.id)}
-              style={{
-                padding: '12px 24px',
-                background: activeCategory === cat.id ? 'var(--primary)' : 'var(--surface)',
-                color: activeCategory === cat.id ? 'white' : 'var(--text-secondary)',
-                border: '1px solid',
-                borderColor: activeCategory === cat.id ? 'var(--primary)' : 'var(--border)',
-                borderRadius: '12px',
-                fontSize: '12px',
-                fontWeight: 500,
-                cursor: 'pointer',
-                transition: 'all 0.3s ease',
-              }}
-              onMouseEnter={(e) => {
-                if (activeCategory !== cat.id) {
-                  e.currentTarget.style.borderColor = 'var(--accent)'
-                  e.currentTarget.style.color = 'var(--accent)'
-                }
-              }}
-              onMouseLeave={(e) => {
-                if (activeCategory !== cat.id) {
-                  e.currentTarget.style.borderColor = 'var(--border)'
-                  e.currentTarget.style.color = 'var(--text-secondary)'
-                }
-              }}
-            >
-              {cat.label}
-            </button>
-          ))}
         </motion.div>
 
         {/* Gallery Grid */}
         <AnimatePresence mode="wait">
           <motion.div
-            key={activeCategory}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
             style={{
               display: 'grid',
               gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
               gap: '20px',
             }}
           >
-            {currentImages.map((image, index) => (
+            {galleryImages.map((image, index) => (
               <motion.div
                 key={image.src + index}
                 initial={{ opacity: 0, scale: 0.95 }}
@@ -289,12 +166,6 @@ export default function Gallery() {
                     color: 'white',
                     marginBottom: '4px',
                   }}>{image.caption}</div>
-                  <div style={{
-                    fontSize: '10px',
-                    color: 'var(--accent-light)',
-                    textTransform: 'uppercase',
-                    letterSpacing: '2px',
-                  }}>{image.category}</div>
                 </div>
               </motion.div>
             ))}
@@ -416,8 +287,8 @@ export default function Gallery() {
             >
               <div style={{ position: 'relative', width: '70vw', height: '70vh' }}>
                 <Image
-                  src={currentImages[currentImageIndex]?.src}
-                  alt={currentImages[currentImageIndex]?.alt}
+                  src={galleryImages[currentImageIndex]?.src}
+                  alt={galleryImages[currentImageIndex]?.alt}
                   fill
                   style={{ objectFit: 'contain' }}
                 />
@@ -429,15 +300,7 @@ export default function Gallery() {
                   color: 'white',
                   marginBottom: '8px',
                 }}>
-                  {currentImages[currentImageIndex]?.caption}
-                </div>
-                <div style={{
-                  fontSize: '12px',
-                  color: 'var(--accent-light)',
-                  textTransform: 'uppercase',
-                  letterSpacing: '2px',
-                }}>
-                  {currentImages[currentImageIndex]?.category}
+                  {galleryImages[currentImageIndex]?.caption}
                 </div>
               </div>
             </motion.div>

@@ -93,7 +93,7 @@ export default function Hero() {
               }}
             >
               <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: 'var(--accent)', animation: 'pulse-soft 2s infinite' }} />
-              <span style={{ fontSize: '12px', color: 'var(--text-secondary)', fontWeight: 500 }}>Women&apos;s Hospital in Bhuj</span>
+              <span style={{ fontSize: '12px', color: 'var(--text-secondary)', fontWeight: 500 }}>Women's Hospital in Bhuj</span>
             </motion.div>
 
             {/* Main Heading */}
@@ -112,7 +112,7 @@ export default function Hero() {
               }}
             >
               Advanced Mother, Baby &<br />
-              <span style={{ color: 'var(--accent)', fontStyle: 'italic' }}>Women&apos;s Care</span><br />
+              <span style={{ color: 'var(--accent)', fontStyle: 'italic' }}>Women's Care</span><br />
               for Kutch
             </motion.h1>
 
@@ -130,7 +130,7 @@ export default function Hero() {
                 fontWeight: 400,
               }}
             >
-              Jogal Women&apos;s Hospital, Bhuj brings maternity, fertility, gynecology, laparoscopy, pediatrics, Level 3 NICU, and women&apos;s wellness care under one trusted roof.
+              Jogal Women's Hospital, Bhuj brings maternity, fertility, gynecology, laparoscopy, pediatrics, Level 3 NICU, and women's wellness care under one trusted roof.
             </motion.p>
 
             {/* Trust Badges */}
@@ -306,14 +306,28 @@ export default function Hero() {
               overflow: 'hidden',
               boxShadow: 'var(--shadow-lg)',
               aspectRatio: '4/3',
+              background: 'linear-gradient(135deg, #1e3a5f 0%, #2d5a87 100%)',
             }}>
-              <Image
-                src="/3D/Exterior/Exterior Building Facade.png"
-                alt="Jogal Women's Hospital - Bhuj, Kutch"
-                fill
-                style={{ objectFit: 'cover' }}
-                priority
-              />
+              {/* Placeholder for Hospital Building */}
+              <div style={{
+                position: 'absolute',
+                inset: 0,
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                justifyContent: 'center',
+                background: 'linear-gradient(135deg, #1e3a5f 0%, #c9a84c 100%)',
+                color: 'white',
+                padding: '40px',
+              }}>
+                <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '28px', fontWeight: 600, marginBottom: '12px' }}>
+                  Jogal Women's Hospital
+                </div>
+                <div style={{ fontSize: '14px', opacity: 0.9 }}>
+                  Bhuj, Kutch
+                </div>
+              </div>
+
               {/* Gradient Overlay */}
               <div style={{
                 position: 'absolute',
@@ -353,7 +367,7 @@ export default function Hero() {
               </div>
             </div>
 
-            {/* Accent Image - Reception */}
+            {/* Accent Image - WhatsApp */}
             <div style={{
               position: 'absolute',
               top: '-30px',
@@ -366,14 +380,14 @@ export default function Hero() {
               boxShadow: 'var(--shadow-md)',
             }}>
               <Image
-                src="/3D/Interior/Ground Floor/RECEPTION AREA(1).png"
-                alt="Jogal Hospital Reception"
+                src="/assets/WhatsApp-Image-2024-04-16-at-12.14.22-724x1024.jpeg"
+                alt="Jogal Hospital"
                 fill
                 style={{ objectFit: 'cover' }}
               />
             </div>
 
-            {/* Accent Image - NICU */}
+            {/* Accent Image - Doctor */}
             <div style={{
               position: 'absolute',
               bottom: '40px',
@@ -386,8 +400,8 @@ export default function Hero() {
               boxShadow: 'var(--shadow-md)',
             }}>
               <Image
-                src="/3D/Interior/2nd Floor/NICU/NICU VIEW 4 copy.png"
-                alt="Level 3 NICU"
+                src="/assets/devensir-solo.jpg"
+                alt="Dr. Deven Jogal"
                 fill
                 style={{ objectFit: 'cover' }}
               />
